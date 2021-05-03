@@ -20,6 +20,10 @@ body {
           justify-content: space-between;
 }
 
+.mob_menu {
+  display: none;
+}
+
 @font-face {
   font-family: 'OpenSansRegular';
   src: url("../fonts/OpenSansRegular.eot") format("embedded-opentype"), url("../fonts/OpenSansRegular.woff2") format("woff2"), url("../fonts/OpenSansRegular.woff") format("woff"), url("../fonts/OpenSansRegular.ttf") format("truetype");
@@ -48,13 +52,20 @@ body {
 @media only screen and (min-width: 340px) and (max-width: 720px) {
   .mob_menu {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .mob_menu .mob_menu_top {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     width: 100%;
     height: 34px;
-    background-color: #21303F;
+    background-color: #21303f;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -114,9 +125,9 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(#EFEFEF));
-    background: linear-gradient(180deg, #FFFFFF 0%, #EFEFEF 100%);
-    border: 1px solid #CECECE;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#efefef));
+    background: linear-gradient(180deg, #ffffff 0%, #efefef 100%);
+    border: 1px solid #cecece;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     border-radius: 4px;
@@ -126,7 +137,7 @@ body {
   .mob_menu .mob_menu_bottom .whatsapp {
     width: 36px;
   }
-  .mob_menu .container_hamburger {
+  .mob_menu .mob_menu_bottom .container_hamburger {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -134,7 +145,7 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .mob_menu .container_hamburger .visuallyHidden {
+  .mob_menu .mob_menu_bottom .container_hamburger .visuallyHidden {
     position: absolute;
     overflow: hidden;
     clip: rect(0 0 0 0);
@@ -144,13 +155,13 @@ body {
     padding: 0;
     border: 0;
   }
-  .mob_menu .container_hamburger .hamburger {
+  .mob_menu .mob_menu_bottom .container_hamburger .hamburger {
     margin: 0 auto;
     width: 21px;
     height: 21px;
     position: relative;
   }
-  .mob_menu .container_hamburger .hamburger .bar {
+  .mob_menu .mob_menu_bottom .container_hamburger .hamburger .bar {
     padding: 0;
     width: 21px;
     height: 2px;
@@ -161,44 +172,44 @@ body {
     transition: all 0.4s ease-in-out;
     position: absolute;
   }
-  .mob_menu .container_hamburger .bar1 {
+  .mob_menu .mob_menu_bottom .container_hamburger .bar1 {
     top: 0;
   }
-  .mob_menu .container_hamburger .bar2,
-  .mob_menu .container_hamburger .bar3 {
+  .mob_menu .mob_menu_bottom .container_hamburger .bar2,
+  .mob_menu .mob_menu_bottom .container_hamburger .bar3 {
     top: 9.5px;
   }
-  .mob_menu .container_hamburger .bar3 {
+  .mob_menu .mob_menu_bottom .container_hamburger .bar3 {
     right: auto;
   }
-  .mob_menu .container_hamburger .bar4 {
+  .mob_menu .mob_menu_bottom .container_hamburger .bar4 {
     bottom: 0;
   }
-  .mob_menu .container_hamburger .checkbox1:checked + label > .hamburger1 > .bar1 {
+  .mob_menu .mob_menu_bottom .container_hamburger .checkbox1:checked + label > .hamburger1 > .bar1 {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     -webkit-transform-origin: 5%;
             transform-origin: 5%;
     width: 30px;
   }
-  .mob_menu .container_hamburger .checkbox1:checked + label > .hamburger1 > .bar2 {
+  .mob_menu .mob_menu_bottom .container_hamburger .checkbox1:checked + label > .hamburger1 > .bar2 {
     -webkit-transform: translateX(-40px);
             transform: translateX(-40px);
     background-color: transparent;
   }
-  .mob_menu .container_hamburger .checkbox1:checked + label > .hamburger1 > .bar3 {
+  .mob_menu .mob_menu_bottom .container_hamburger .checkbox1:checked + label > .hamburger1 > .bar3 {
     -webkit-transform: translateX(40px);
             transform: translateX(40px);
     background-color: transparent;
   }
-  .mob_menu .container_hamburger .checkbox1:checked + label > .hamburger1 > .bar4 {
+  .mob_menu .mob_menu_bottom .container_hamburger .checkbox1:checked + label > .hamburger1 > .bar4 {
     -webkit-transform-origin: 5%;
             transform-origin: 5%;
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
     width: 30px;
   }
-  .mob_menu .nav {
+  .nav {
     padding: 20px;
     position: absolute;
     top: -1400px;
@@ -207,25 +218,26 @@ body {
     transition: top 0.6s ease;
     width: 55%;
   }
-  .mob_menu .nav--active {
+  .nav--active {
     position: absolute;
     top: 60px;
   }
-  .mob_menu .nav__list {
+  .nav__list {
     padding-left: 0;
     list-style: none;
   }
-  .mob_menu .nav__item {
+  .nav__item {
     font-family: "OpenSansRegular";
     margin-bottom: 10px;
     text-align: left;
   }
-  .mob_menu .nav__link {
+  .nav__link {
     position: relative;
     color: #fff;
     text-decoration: none;
   }
-  .mob_menu .nav__link--plus::after, .mob_menu .nav__link--minus::after {
+  .nav__link--plus::after,
+  .nav__link--minus::after {
     color: #fff;
     font-family: FontAwesome;
     font-size: 10px;
@@ -235,20 +247,20 @@ body {
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
-  .mob_menu .nav__link--plus::after {
+  .nav__link--plus::after {
     content: "";
   }
-  .mob_menu .nav__link--minus {
-    color: #C14500;
+  .nav__link--minus {
+    color: #c14500;
   }
-  .mob_menu .nav__link--minus::after {
+  .nav__link--minus::after {
     content: "";
-    color: #C14500;
+    color: #c14500;
   }
-  .mob_menu .nav__link:hover {
+  .nav__link:hover {
     opacity: 0.6;
   }
-  .mob_menu .nav__sub-list {
+  .nav__sub-list {
     margin-top: 10px;
     margin-bottom: 10px;
     padding-top: 10px;
@@ -256,16 +268,16 @@ body {
     padding-left: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.6);
     border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-    displaY: none;
+    display: none;
     list-style: none;
   }
-  .mob_menu .nav__sub-list--active {
+  .nav__sub-list--active {
     display: block;
   }
-  .mob_menu .nav__sub-item .nav__link {
+  .nav__sub-item .nav__link {
     color: rgba(255, 255, 255, 0.6);
   }
-  .mob_menu .nav__sub-item:not(:last-child) {
+  .nav__sub-item:not(:last-child) {
     padding-bottom: 10px;
   }
 }
