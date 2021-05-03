@@ -1,0 +1,23 @@
+$font_regular: 'OpenSansRegular';
+$font_bold: 'OpenSansBold';
+$font_light: 'OpenSansLight';
+$font_semibold: 'OpenSansSemibold';
+$font_boldItalic: 'OpenSansBoldItalic';
+
+body {
+    font-family: OpenSansRegular;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.w980 {
+   max-width: 980px;
+    margin: 0 auto;
+}
+
+.container_carts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
